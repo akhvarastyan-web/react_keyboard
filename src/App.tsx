@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 type State = {
   pressedKey: string;
 };
 
 type Props = {};
-
 
 export class App extends Component<Props, State> {
   state = {
@@ -20,7 +19,7 @@ export class App extends Component<Props, State> {
     document.removeEventListener('keyup', this.handleKeyUp);
   }
 
-  handleKeyUp = event => this.setState({ pressedKey: event.key });
+  handleKeyUp = (event: KeyboardEvent) => this.setState({ pressedKey: event.key });
 
   render() {
     const { pressedKey } = this.state;
